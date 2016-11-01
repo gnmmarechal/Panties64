@@ -28,6 +28,7 @@ namespace Panties64
         }
         private void encodeButton_Click(object sender, EventArgs e)
         {
+            if (Convert.ToInt32(timesBox.Text) == 0) timesBox.Text = "1";
             string originalstring = inputBox.Text;
             while (Convert.ToInt32(timesBox.Text) > 0)
             {
@@ -40,6 +41,7 @@ namespace Panties64
 
         private void decodeButton_Click(object sender, EventArgs e)
         {
+            if (Convert.ToInt32(timesBox.Text) == 0) timesBox.Text = "1";
             string originalstring = inputBox.Text;
             while(Convert.ToInt32(timesBox.Text) > 0)
             {
