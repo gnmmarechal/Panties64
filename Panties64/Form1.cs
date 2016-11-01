@@ -33,7 +33,7 @@ namespace Panties64
             {
                 outputBox.Text = Base64Encode(inputBox.Text);
                 inputBox.Text = outputBox.Text;
-                timesBox.Text = Convert.ToString(Convert.ToInt32(timesBox.Text) - 1);
+                timesBox.Text = Convert.ToString(Convert.ToInt64(timesBox.Text) - 1);
             }
             inputBox.Text = originalstring;
         }
@@ -45,7 +45,7 @@ namespace Panties64
             {
                 outputBox.Text = Base64Decode(inputBox.Text);
                 inputBox.Text = outputBox.Text;
-                timesBox.Text = Convert.ToString(Convert.ToInt32(timesBox.Text) - 1);
+                timesBox.Text = Convert.ToString(Convert.ToInt64(timesBox.Text) - 1);
             }
             inputBox.Text = originalstring;
         }
@@ -58,17 +58,29 @@ namespace Panties64
 
         private void button1_Click(object sender, EventArgs e)
         {
-            timesBox.Text = Convert.ToString(Convert.ToInt32(timesBox.Text) + 1);
+            timesBox.Text = Convert.ToString(Convert.ToInt64(timesBox.Text) + 1);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            timesBox.Text = Convert.ToString(Convert.ToInt32(timesBox.Text) - 1);
+            timesBox.Text = Convert.ToString(Convert.ToInt64(timesBox.Text) - 1);
         }
 
         private void resetButton_Click(object sender, EventArgs e)
         {
             timesBox.Text = "1";
+        }
+
+        private void timerCheck_Tick(object sender, EventArgs e)
+        {
+            if (Convert.ToInt64(timesBox.Text) == 0)
+            {
+                decreaseTimes.Enabled = false;
+            }
+            else
+            {
+                decreaseTimes.Enabled = true;
+            }
         }
     }
 }

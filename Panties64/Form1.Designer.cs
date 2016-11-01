@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.inputBox = new System.Windows.Forms.TextBox();
             this.outputBox = new System.Windows.Forms.TextBox();
@@ -38,6 +39,7 @@
             this.decreaseTimes = new System.Windows.Forms.Button();
             this.increaseTimes = new System.Windows.Forms.Button();
             this.resetButton = new System.Windows.Forms.Button();
+            this.timerCheck = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // inputBox
@@ -124,6 +126,12 @@
             this.resetButton.UseVisualStyleBackColor = true;
             this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
             // 
+            // timerCheck
+            // 
+            this.timerCheck.Enabled = true;
+            this.timerCheck.Interval = 10;
+            this.timerCheck.Tick += new System.EventHandler(this.timerCheck_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -158,6 +166,7 @@
         private System.Windows.Forms.Button decreaseTimes;
         private System.Windows.Forms.Button increaseTimes;
         private System.Windows.Forms.Button resetButton;
+        private System.Windows.Forms.Timer timerCheck;
     }
 }
 
